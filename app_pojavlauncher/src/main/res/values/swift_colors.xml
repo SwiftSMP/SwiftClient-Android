@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- SwiftClient design system, shared with the Windows launcher and the website. -->
+<resources>
+    <color name="sc_bg">#0D1020</color>
+    <color name="sc_bg_deep">#080A16</color>
+    <color name="sc_panel">#131830</color>
+    <color name="sc_panel_2">#0B0E1E</color>
+    <color name="sc_line">#222A48</color>
+    <color name="sc_text">#ECEEF6</color>
+    <color name="sc_muted">#8E94B0</color>
+    <color name="sc_faint">#5C6384</color>
+    <color name="sc_orange">#FC6D00</color>
+    <color name="sc_orange_hi">#FF9A3D</color>
+    <color name="sc_gold">#FFC83D</color>
+    <color name="sc_green">#4ADE80</color>
+    <color name="sc_red">#F25555</color>
+    <color name="sc_ink">#1A0D00</color>
+</resources>

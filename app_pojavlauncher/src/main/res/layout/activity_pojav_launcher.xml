@@ -1,51 +1,78 @@
 <androidx.constraintlayout.widget.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@android:color/transparent">
+    android:background="@color/sc_bg">
+
+    <!-- SwiftClient header: logo and wordmark, then the account picker and settings. -->
+    <View
+        android:id="@+id/sc_header_bg"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:background="@drawable/sc_header_bg"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/sc_header_logo"
+        android:layout_width="34dp"
+        android:layout_height="34dp"
+        android:layout_marginStart="14dp"
+        android:src="@drawable/ic_swiftclient"
+        android:contentDescription="@null"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/sc_header_bg"
+        app:layout_constraintBottom_toBottomOf="@id/sc_header_bg" />
+
+    <TextView
+        android:id="@+id/sc_header_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:fontFamily="@font/pixelify"
+        android:text="@string/sc_wordmark"
+        android:textColor="@color/sc_text"
+        android:textSize="19sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@id/sc_header_logo"
+        app:layout_constraintTop_toTopOf="@id/sc_header_bg"
+        app:layout_constraintBottom_toBottomOf="@id/sc_header_bg" />
 
     <com.kdt.mcgui.mcAccountSpinner
         android:id="@+id/account_spinner"
-        android:layout_width="match_parent"
-        android:layout_height="@dimen/_52sdp"
-
+        android:layout_width="0dp"
+        android:layout_height="56dp"
+        android:layout_marginStart="12dp"
         android:dropDownWidth="@dimen/_250sdp"
-        android:dropDownVerticalOffset="@dimen/_52sdp"
-
+        android:dropDownVerticalOffset="56dp"
+        app:layout_constraintStart_toEndOf="@id/sc_header_title"
+        app:layout_constraintEnd_toStartOf="@id/setting_button"
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageButton
         android:id="@+id/setting_button"
-        android:layout_width="@dimen/_52sdp"
-        android:layout_height="@dimen/_52sdp"
-        android:background="?attr/selectableItemBackground"
+        android:layout_width="52dp"
+        android:layout_height="56dp"
+        android:background="?attr/selectableItemBackgroundBorderless"
         android:src="@drawable/ic_menu_settings"
         android:scaleType="fitCenter"
-        android:paddingVertical="@dimen/_8sdp"
-
+        android:padding="14dp"
+        android:contentDescription="@string/sc_settings"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <!-- Holding most of the dynamic content -->
     <androidx.fragment.app.FragmentContainerView
         android:id="@+id/container_fragment"
-
         android:layout_width="match_parent"
         android:layout_height="0dp"
         app:layout_constraintBottom_toTopOf="@+id/progress_layout"
-        app:layout_constraintTop_toBottomOf="@+id/account_spinner" />
-
+        app:layout_constraintTop_toBottomOf="@+id/sc_header_bg" />
 
     <com.kdt.mcgui.ProgressLayout
         android:id="@+id/progress_layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-
         app:layout_constraintBottom_toBottomOf="parent" />
-
-
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>

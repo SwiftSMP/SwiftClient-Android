@@ -12,11 +12,15 @@
         android:layout_height="match_parent"
         android:layout_weight="1"
 
-        android:textSize="@dimen/_16ssp"
+        android:textSize="15sp"
+        android:textStyle="bold"
+        android:textColor="@color/sc_text"
+        android:singleLine="true"
+        android:ellipsize="end"
         android:gravity="center_vertical"
         android:drawablePadding="@dimen/_6sdp"
         android:paddingStart="@dimen/_8sdp"
-        app:drawableStartSize="@dimen/_30sdp"
+        app:drawableStartSize="26dp"
 
         tools:text="HELLO THERE"
         tools:drawableStart="@mipmap/ic_launcher"

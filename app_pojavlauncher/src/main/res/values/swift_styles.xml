@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="SwiftChip">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:background">@drawable/sc_chip</item>
+        <item name="android:paddingHorizontal">10dp</item>
+        <item name="android:paddingVertical">5dp</item>
+        <item name="android:drawablePadding">6dp</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:fontFamily">@font/silkscreen</item>
+        <item name="android:textColor">@color/sc_gold</item>
+        <item name="android:textSize">11sp</item>
+    </style>
+    <style name="SwiftEyebrow">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:fontFamily">@font/silkscreen</item>
+        <item name="android:textColor">@color/sc_orange_hi</item>
+        <item name="android:textSize">11sp</item>
+        <item name="android:letterSpacing">0.06</item>
+    </style>
+    <style name="SwiftTitle">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:fontFamily">@font/pixelify</item>
+        <item name="android:textColor">@color/sc_text</item>
+        <item name="android:textSize">30sp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+    <style name="SwiftSub">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@color/sc_muted</item>
+        <item name="android:textSize">14sp</item>
+    </style>
+    <style name="SwiftGhostButton">
+        <item name="android:layout_height">50dp</item>
+        <item name="android:background">@drawable/sc_button_ghost</item>
+        <item name="android:stateListAnimator">@null</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="android:textColor">@color/sc_text</item>
+        <item name="android:textSize">15sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:drawablePadding">6dp</item>
+        <item name="android:paddingHorizontal">14dp</item>
+    </style>
+    <style name="SwiftTool" parent="SwiftGhostButton">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:layout_height">72dp</item>
+        <item name="android:paddingVertical">8dp</item>
+        <item name="android:drawablePadding">4dp</item>
+        <item name="android:textSize">13sp</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:textColor">@color/sc_muted</item>
+    </style>
+    <style name="SwiftTab">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:background">@drawable/sc_nav_item</item>
+        <item name="android:gravity">center</item>
+        <item name="android:drawablePadding">2dp</item>
+        <item name="android:drawableTint">@color/sc_nav_tint</item>
+        <item name="android:textColor">@color/sc_nav_tint</item>
+        <item name="android:textSize">11sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:clickable">true</item>
+        <item name="android:focusable">true</item>
+    </style>
+</resources>

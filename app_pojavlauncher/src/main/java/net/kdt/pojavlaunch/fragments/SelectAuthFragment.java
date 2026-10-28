@@ -26,6 +26,7 @@ public class SelectAuthFragment extends Fragment {
         Button mLocalButton = view.findViewById(R.id.button_local_authentication);
 
         mMicrosoftButton.setOnClickListener(v -> Tools.swapFragment(requireActivity(), MicrosoftLoginFragment.class, MicrosoftLoginFragment.TAG, null));
-        mLocalButton.setOnClickListener(v -> hasNoOnlineProfileDialog(requireActivity(), () -> Tools.swapFragment(requireActivity(), LocalLoginFragment.class, LocalLoginFragment.TAG, null)));
+        // SwiftClient signs in with Microsoft only, like the Windows launcher: no offline accounts.
+        mLocalButton.setVisibility(View.GONE);
     }
 }

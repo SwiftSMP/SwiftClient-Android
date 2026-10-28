@@ -106,6 +106,7 @@ import java.nio.charset.StandardCharsets;
 import java.text.ParseException;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.Date;
 import java.util.List;
 import java.util.Locale;
@@ -510,7 +511,12 @@ public final class Tools {
         // We use an abomination to support all DH versions with a single library.
         javaArgList.add("-DZstdNativePath="+Tools.NATIVE_LIB_DIR+"/libzstd-jni-1.5.7-6-dhcompat.so");
         // SwiftClient mod: capes server and the SwiftSMP server it pins and joins.
-        if (hasMods("swiftclient")) javaArgList.addAll(Arrays.asList(SwiftClientInstaller.JVM_PROPERTIES));
+        boolean hasSwiftClient = hasMods("swiftclient");
+        if (hasSwiftClient) {
+            javaArgList.addAll(Arrays.asList(SwiftClientInstaller.JVM_PROPERTIES));
+            javaArgList.addAll(SwiftClientInstaller.gcArgs(Tools.isValidString(minecraftProfile.javaArgs)
+                    ? minecraftProfile.javaArgs : LauncherPreferences.PREF_CUSTOM_JAVA_ARGS));
+        }
         // We only ever reach this point when user has already used the force run switch
         boolean hasSodiumMod = false;
         for (String modName : sodiumMods) {
@@ -544,6 +550,9 @@ public final class Tools {
         if (hasSodiumMod) javaArgList.add("-Dsodium.checks.issue2561=false");
         javaArgList.add(versionInfo.mainClass);
         javaArgList.addAll(Arrays.asList(launchArgs));
+        // "Join" on the SwiftClient Servers tab: Minecraft 1.20+ connects straight to this server.
+        String quickPlay = SwiftClientInstaller.takeQuickPlay();
+        if (quickPlay != null) Collections.addAll(javaArgList, "--quickPlayMultiplayer", quickPlay);
         // ctx.appendlnToLog("full args: "+javaArgList.toString());
         String args = LauncherPreferences.PREF_CUSTOM_JAVA_ARGS;
         if(Tools.isValidString(minecraftProfile.javaArgs)) args = minecraftProfile.javaArgs;
