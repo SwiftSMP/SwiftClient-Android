@@ -16,6 +16,7 @@ import androidx.core.app.NotificationCompat;
 import net.kdt.pojavlaunch.MainActivity;
 import net.kdt.pojavlaunch.R;
 import net.kdt.pojavlaunch.Tools;
+import net.kdt.pojavlaunch.swiftclient.SwiftNowPlaying;
 import net.kdt.pojavlaunch.utils.NotificationUtils;
 
 import java.lang.ref.WeakReference;
@@ -27,6 +28,13 @@ public class GameService extends Service {
     @Override
     public void onCreate() {
         Tools.buildNotificationChannel(getApplicationContext());
+        SwiftNowPlaying.start(this);
+    }
+
+    @Override
+    public void onDestroy() {
+        SwiftNowPlaying.stop();
+        super.onDestroy();
     }
 
     @Override

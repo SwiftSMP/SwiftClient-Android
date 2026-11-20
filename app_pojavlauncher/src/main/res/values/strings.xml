@@ -572,4 +572,6 @@
     <string name="sc_installs_chip">%d installs</string>
     <string name="sc_swiftsmp_chip">SwiftSMP %d</string>
     <string name="sc_net_error">Could not reach SwiftClient services. Check your connection.</string>
+    <string name="sc_lyrics_access_title">Show lyrics while you play</string>
+    <string name="sc_lyrics_access_body">Allow notification access for SwiftClient so it can read what is playing and draw the lyrics in game. Tap to open the setting.</string>
 </resources>

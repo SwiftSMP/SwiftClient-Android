@@ -135,6 +135,16 @@
             <property android:name="android.app.PROPERTY_SPECIAL_USE_FGS_SUBTYPE"
                 android:value="This application is intended to run a 3rd-party piece of software which cannot be managed using the activity's saved instance state. This service is used for background persistence of this piece of software."/>
         </service>
+        <!-- Reads the phone's media session so the mod can draw sky lyrics. The user
+             grants it on the system notification-access page; see SwiftNowPlaying. -->
+        <service android:name=".swiftclient.SwiftMediaListener"
+            android:exported="true"
+            android:label="@string/app_name"
+            android:permission="android.permission.BIND_NOTIFICATION_LISTENER_SERVICE">
+            <intent-filter>
+                <action android:name="android.service.notification.NotificationListenerService" />
+            </intent-filter>
+        </service>
     </application>
     <queries>
         <package android:name="net.kdt.pojavlaunch.ffmpeg"/>

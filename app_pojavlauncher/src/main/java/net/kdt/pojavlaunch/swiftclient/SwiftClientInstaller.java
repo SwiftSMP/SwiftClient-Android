@@ -67,7 +67,7 @@ public class SwiftClientInstaller {
     };
     private static final String MANAGED_LIST = ".swiftclient-managed";
 
-    private static final String RELEASE_API = "https://api.github.com/repos/SwiftSMP/SwiftClient/releases/latest";
+    private static final String RELEASE_API = "https://api.github.com/repos/SwiftSMP/SwiftClient-Releases/releases/latest";
     private static final String MODRINTH_VERSIONS = "https://api.modrinth.com/v2/project/%s/version?loaders=%s&game_versions=%s";
     // swiftclient-1.4.0+1.21.8.jar -> 1.21.8
     private static final Pattern MOD_ASSET = Pattern.compile("^swiftclient-[^+]+\\+(.+)\\.jar$");

@@ -46,10 +46,10 @@ On top of it, this fork adds:
 | Change | Where |
 |---|---|
 | New SwiftClient UI: header, Play / Servers / Mods / Cloaks tabs | `fragments/MainMenuFragment.java`, `res/layout/fragment_launcher.xml`, `item_sc_*.xml`, `values/swift_*.xml` |
-| One-tap install: Fabric + SwiftClient mod (from the [SwiftClient release](https://github.com/SwiftSMP/SwiftClient/releases/latest)) + Fabric API + performance pack in `custom_instances/swiftclient-<version>`, one profile per version | `swiftclient/SwiftClientInstaller.java` |
+| One-tap install: Fabric + SwiftClient mod (from the [SwiftClient release](https://github.com/SwiftSMP/SwiftClient-Releases/releases/latest)) + Fabric API + performance pack in `custom_instances/swiftclient-<version>`, one profile per version | `swiftclient/SwiftClientInstaller.java` |
 | Live counters, server pings, capes, install heartbeat | `swiftclient/SwiftNet.java` |
 | Cape server and SwiftSMP properties, GC tuning and quick-play join passed at launch | `Tools.java` |
-| Microsoft accounts only (no offline accounts), big-core affinity on by default | `SelectAuthFragment.java`, `LauncherPreferences.java` |
+| Microsoft sign-in plus offline (local) accounts with the vanilla `OfflinePlayer:` UUID, big-core affinity on by default | `SelectAuthFragment.java`, `LocalLoginFragment.java`, `mcAccountSpinner.java`, `LauncherPreferences.java` |
 | Name, package id (`net.swiftsmp.swiftclient.android`), icon and SwiftSMP colours | `app_pojavlauncher/build.gradle`, `res/` |
 
 Upstream's own README is kept as [README.amethyst.md](README.amethyst.md).

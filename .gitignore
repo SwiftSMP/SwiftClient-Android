@@ -18,3 +18,6 @@ app_pojavlauncher/.cxx/
 # SwiftClient
 *.jks
 keystore.properties
+
+# Release artifacts live on GitHub, not in the tree.
+dist/
